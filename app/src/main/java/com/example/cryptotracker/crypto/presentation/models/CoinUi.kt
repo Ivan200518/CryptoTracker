@@ -1,9 +1,9 @@
-package com.plcoding.cryptotracker.crypto.presentation.models
+package com.example.cryptotracker.crypto.presentation.models
 
 import android.icu.text.NumberFormat
 import androidx.annotation.DrawableRes
 import com.example.cryptotracker.crypto.domain.Coin
-import com.plcoding.cryptotracker.core.domain.util.presentation.util.getDrawableIdForCoin
+import com.example.cryptotracker.core.domain.util.presentation.util.getDrawableIdForCoin
 import java.util.Locale
 
 data class CoinUi(

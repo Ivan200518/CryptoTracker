@@ -1,6 +1,6 @@
 package com.example.cryptotracker.core.domain.util.data.networking
 
-import com.plcoding.cryptotracker.BuildConfig
+import com.example.cryptotracker.BuildConfig
 
 
 fun constructUrl(url:String) :String{

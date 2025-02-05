@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.cryptotracker.core.domain.util.presentation.util.ObserveAsEvents
 import com.example.cryptotracker.core.domain.util.presentation.util.toString
+import com.example.cryptotracker.crypto.presentation.coin_detail.CoinDetailScreen
 import com.example.cryptotracker.crypto.presentation.coin_list.CoinListEvent
 import com.example.cryptotracker.crypto.presentation.coin_list.CoinListViewModel
 import com.example.cryptotracker.crypto.presentation.coin_list.CoinListScreen
@@ -39,11 +40,26 @@ class MainActivity : ComponentActivity() {
                                     event.error.toString(context),
                                     Toast.LENGTH_LONG
                                 ).show()
-                            }
+                            } 
+                        }
+
+
+
+                    }
+                    when {
+                        state.selectedCoin != null -> {
+                            CoinDetailScreen(
+                                state = state,
+                                modifier = Modifier.padding(innerPadding)
+                            )
+                        }
+                        else -> {
+                            CoinListScreen(state = state,
+                                modifier = Modifier.padding(innerPadding),
+                                onAction = viewModel::onAction)
                         }
                     }
-                    CoinListScreen(state = state,
-                        modifier = Modifier.padding(innerPadding))
+
                 }
             }
         }
